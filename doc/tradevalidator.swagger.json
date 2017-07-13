@@ -1,0 +1,177 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample trade validator.",
+    "version": "1.0.0",
+    "title": "Trade Validator",
+    "contact": {
+      "email": "rdemirkoparan@gmail.com"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/trade",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/validate": {
+      "post": {
+        "tags": [
+          "Validate"
+        ],
+        "summary": "validate a single trade object",
+        "description": "",
+        "operationId": "validate",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Trade object needs to validate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Trade"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "204": {
+            "description": "Empty object",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "406": {
+            "description": "Not valid",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    },
+    "/validatebulk": {
+      "post": {
+        "tags": [
+          "validatebulk"
+        ],
+        "summary": "validate multiple trade objects",
+        "description": "",
+        "operationId": "validatebulk",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Trade objects needs to validate",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Trade"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Trade": {
+      "type": "object",
+      "required": [
+        "customer",
+        "ccyPair"
+      ],
+      "properties": {
+        "customer": {
+          "type": "string",
+          "example": "PLUTO1"
+        },
+        "ccyPair": {
+          "type": "string",
+          "example": "EURUSD"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["Spot","Forward","VanillaOption"]
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["BUY","SELL"]
+        },
+        "tradeDate": {
+          "type": "string",
+          "example": "2016-08-11"
+        },
+        "amount1": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "amount2": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "rate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "valueDate": {
+          "type": "string",
+          "example": "2016-08-15"
+        },
+        "legalEntity": {
+          "type": "string",
+          "example": "CS Zurich"
+        },
+        "trader": {
+          "type": "string",
+          "example": "Johann Baumfiddler"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tradeData": {
+          "type": "string"
+        },
+        "messages": {
+          "type": "array"
+        }
+      }
+    }
+  },
+      "externalDocs": {
+        "description": "Check Postman collection",
+        "url": "https://www.getpostman.com/collections/619534233e1ff0663489"
+      }
+}

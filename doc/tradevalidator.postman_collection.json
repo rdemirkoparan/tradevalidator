@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "tradevalidator",
+		"_postman_id": "af11b482-b571-5127-69b3-806d153f4e14",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "validate",
+			"request": {
+				"url": "http://localhost:8080/trade/validate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"customer\":\"PLUTO1\",\"ccyPair\":\"EURUSD\",\"type\":\"Spot\",\"direction\":\"BUY\",\"tradeDate\":\"2016-08-11\",\"amount1\":1000000.00,\"amount2\":1120000.00,\"rate\":1.12,\"valueDate\":\"2016-08-15\",\"legalEntity\":\"CS Zurich\",\"trader\":\"Johann Baumfiddler\"}"
+				},
+				"description": "Validates a single trade request"
+			},
+			"response": []
+		},
+		{
+			"name": "validatebulk",
+			"request": {
+				"url": "http://localhost:8080/trade/validatebulk",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Spot\",\n    \"direction\": \"BUY\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-15\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Spot\",\n    \"direction\": \"SELL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-22\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO2\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Forward\",\n    \"direction\": \"SELL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-22\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO2\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Forward\",\n    \"direction\": \"BUY\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-21\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO2\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Forward\",\n    \"direction\": \"BUY\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-08\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUT02\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Forward\",\n    \"direction\": \"BUY\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-08\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO3\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"Forward\",\n    \"direction\": \"BUY\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"valueDate\": \"2016-08-22\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"EUROPEAN\",\n    \"direction\": \"BUY\",\n    \"strategy\": \"CALL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-19\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO2\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"EUROPEAN\",\n    \"direction\": \"SELL\",\n    \"strategy\": \"CALL\",\n    \"tradeDate \": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-21\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"EUROPEAN\",\n    \"direction\": \"BUY\",\n    \"strategy\": \"CALL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-25\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"AMERICAN\",\n    \"direction\": \"BUY\",\n    \"strategy\": \"CALL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08- 9\",\n    \"excerciseStartDate\": \"2016-08-12\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO2\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"AMERICAN\",\n    \"direction\": \"SELL\",\n    \"strategy\": \"CALL\",\n    \"tradeDate \": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-21\",\n    \"excerciseStartDate\": \"2016-08-12\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"AMERICAN\",\n    \"direction\": \"BUY\",\n    \"strategy\": \"CALL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-25\",\n    \"excerciseStartDate\": \"2016-08-12\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO1\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"AMERICAN\",\n    \"direction\": \"BUY\",\n    \"strategy\": \"CALL\",\n    \"tradeDate\": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-19\",\n    \"excerciseStartDate\": \"2016-08-10\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  },\n  {\n    \"customer\": \"PLUTO3\",\n    \"ccyPair\": \"EURUSD\",\n    \"type\": \"VanillaOption\",\n    \"style\": \"AMERICAN\",\n    \"direction\": \"SELL\",\n    \"strategy\": \"CALL\",\n    \"tradeDate \": \"2016-08-11\",\n    \"amount1\": 1000000.00,\n    \"amount2\": 1120000.00,\n    \"rate\": 1.12,\n    \"deliveryDate\": \"2016-08-22\",\n    \"expiryDate\": \"2016-08-19\",\n    \"excerciseStartDate\": \"2016-08-10\",\n    \"payCcy\": \"USD\",\n    \"premium\": 0.20,\n    \"premiumCcy\": \"USD\",\n    \"premiumType\": \"%USD\",\n    \"premiumDate\": \"2016-08-12\",\n    \"legalEntity\": \"CS Zurich\",\n    \"trader\": \"Johann Baumfiddler\"\n  }\n]"
+				},
+				"description": "Validates a bulk trade request"
+			},
+			"response": []
+		}
+	]
+}
