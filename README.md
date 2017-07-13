@@ -2,8 +2,8 @@
 Trade Information Validator
 
 ## Environment
-JDK 8
-Embedded Tomcat 8
+1. JDK 8
+2. Embedded Tomcat 8
 
 
 ## To compile and run
@@ -13,8 +13,8 @@ Embedded Tomcat 8
 4. java -jar target/tradevalidator-0.0.1-SNAPSHOT.jar
    
    
-## Usage
-1. run doc/client.html
+## Client  UI
+run doc/client.html
 
 
 ## Documentation
